@@ -1,0 +1,43 @@
+package SpkToolbarD;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESIGNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  Vcl,
+  DesignIDE,
+  SpkToolbarR;
+
+contains
+  RegisterSpkToolbar in 'RegisterSpkToolbar.pas',
+  SpkAppearanceEditor in 'DesignTime\SpkAppearanceEditor.pas' {frmAppearanceEditWindow},
+  SpkEditWindow in 'DesignTime\SpkEditWindow.pas' {frmEditWindow},
+  SpkToolbarEditor in 'DesignTime\SpkToolbarEditor.pas';
+
+end.

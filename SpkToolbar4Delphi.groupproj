@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{7E3CF2CC-F50D-434D-AC72-975F71C7DBB0}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="SpkToolbarR.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SpkToolbarD.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="SpkToolbarR">
+        <MSBuild Projects="SpkToolbarR.dproj"/>
+    </Target>
+    <Target Name="SpkToolbarR:Clean">
+        <MSBuild Projects="SpkToolbarR.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SpkToolbarR:Make">
+        <MSBuild Projects="SpkToolbarR.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SpkToolbarD">
+        <MSBuild Projects="SpkToolbarD.dproj"/>
+    </Target>
+    <Target Name="SpkToolbarD:Clean">
+        <MSBuild Projects="SpkToolbarD.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SpkToolbarD:Make">
+        <MSBuild Projects="SpkToolbarD.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="SpkToolbarR;SpkToolbarD"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="SpkToolbarR:Clean;SpkToolbarD:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="SpkToolbarR:Make;SpkToolbarD:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

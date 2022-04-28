@@ -1,0 +1,50 @@
+package SpkToolbarR;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  vcl;
+
+contains
+  SpkGraphTools in 'Src\SpkGraphTools.pas',
+  SpkGUITools in 'Src\SpkGUITools.pas',
+  SpkMath in 'Src\SpkMath.pas',
+  SpkAppearance in 'Src\SpkAppearance.pas',
+  SpkBaseItem in 'Src\SpkBaseItem.pas',
+  SpkButtons in 'Src\SpkButtons.pas',
+  SpkConst in 'Src\SpkConst.pas',
+  SpkItems in 'Src\SpkItems.pas',
+  SpkPane in 'Src\SpkPane.pas',
+  SpkToolbar in 'Src\SpkToolbar.pas',
+  SpkTypes in 'Src\SpkTypes.pas',
+  SpkTab in 'Src\SpkTab.pas',
+  SpkCheckboxes in 'Src\SpkCheckboxes.pas';
+
+end.
